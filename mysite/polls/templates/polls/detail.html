@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Polls of West Scotland</title>
+        <meta charset="utf-8">
+        <meta name="author"; content="Andrew Ward">
+        {% load static %}
+        <link href="{% static 'polls/style.css' %}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <h1>Polls of West Scotland</h1>
+        <h2>{{ question.question_text }}</h2>
+
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+            {% endfor %}
+            <input type="submit" value="Vote">
+        </form>
+    </body>
+</html>

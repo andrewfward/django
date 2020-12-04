@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Polls of West Scotland | Results</title>
+        <meta charset="utf-8">
+        <meta name="author"; content="Andrew Ward">
+        {% load static %}
+        <link href="{% static 'polls/style.css' %}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <h1>Results</h1>
+        <h2>{{ question.question_text }}</h2>
+            <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }} – {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            {% endfor %}
+            </ul>
+        <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    </body>
+</html>
