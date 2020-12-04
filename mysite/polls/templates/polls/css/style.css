@@ -1,0 +1,84 @@
+html {
+    background-color: #169B62;
+}
+
+header {
+    background-color: white;
+    color: #169B62;
+}
+
+header nav {
+    display:inline-block;
+    width:100%;
+    right:0;
+    text-align:center;
+    font-size:1rem
+}
+header nav ul li{
+    display:inline-block;
+    color: white;
+}
+
+header a {
+    color: #169B62
+}
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+h2.node {
+    font-family: monospace;
+}
+
+h2 {
+    padding-left: 2pt;
+}
+
+p {
+    padding-left: 2pt;
+}
+
+ul {
+    list-style: inside square;
+    padding: 0;
+}
+ul li {
+    padding: 8 px 20 px;
+    font-size: 40 px;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+table {
+    background-color: green;
+    border: 4px solid white;
+    border-collapse: collapse;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    font-weight: normal;
+    color: white;
+    border: 2px solid white;
+}
